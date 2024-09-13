@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+.card-container {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* 或 row，根据需要 */
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    height: 100vh; /* 占满视口高度 */
+    text-align: center; /* 文本居中 */
+}
+
+.cover, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform .25s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 5px;
+    
+}
+
+.cover {
+    
+    transform: rotatey(0deg);
+}
+
+.card-container:hover .cover {
+    transform: rotatey(180deg);
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    transform: rotatey(-180deg);
+}
+
+.card-container:hover .back {
+    transform: rotatey(0deg);
+}
+
+
+h1 {
+    color: aqua;
+    font-family:cursive;
+}
+
+
+.container img {
+    border-radius: 15px; 
+}
